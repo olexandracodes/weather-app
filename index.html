@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/styles.css" />
+    <title>Weather</title>
+    <script
+      src="https://kit.fontawesome.com/8591ee5b1c.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="page-container">
+      <div class="bar-container">
+        <div class="row">
+          <div class="col-4 weather">
+            <div class="city-container">
+              <form id="city-form">
+                <div class="mb-3 city-form">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="city-input"
+                    placeholder="Find your city"
+                    autocapitalize="off"
+                  />
+                </div>
+
+                <button
+                  type="button"
+                  id="location-button"
+                  class="btn btn-outline-warning"
+                >
+                  Current
+                </button>
+                <button type="submit" class="btn btn-outline-dark">
+                  Change
+                </button>
+              </form>
+
+              <h2 class="city-name" id="shown-city">City</h2>
+              <h4 class="city-time">Time</h4>
+            </div>
+
+            <div class="card days-container">
+              <ul class="list-group list-group-flush days-list">
+                <li class="list-group-item">
+                  <div class="card days-body">
+                    <div class="card-body">
+                      <h3 class="week">Today</h3>
+                      min max
+                      <i class="fa-solid fa-temperature-three-quarters"></i>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="card days-body">
+                    <div class="card-body">
+                      <h3 class="week">Thursday</h3>
+                      min max
+                      <i class="fa-solid fa-temperature-three-quarters"></i>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="card days-body">
+                    <div class="card-body">
+                      <h3 class="week">Friday</h3>
+                      min max
+                      <i class="fa-solid fa-temperature-three-quarters"></i>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="card days-body">
+                    <div class="card-body">
+                      <h3 class="week">Saturday</h3>
+                      min max
+                      <i class="fa-solid fa-temperature-three-quarters"></i>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="card days-body">
+                    <div class="card-body">
+                      <h3 class="week">Sunday</h3>
+                      min max
+                      <i class="fa-solid fa-temperature-three-quarters"></i>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-8 dayinfo">
+            <div class="card bg-dark text-white image-window">
+              <img src="images/wow.jpg" class="card-img" alt="Today" />
+              <div class="card-img-overlay">
+                <h1 class="card-title">
+                  <span id="degree">17</span>
+
+                  <span class="degrees">
+                    <a href="#" id="c-temp">°C</a> |
+                    <a href="#" id="f-temp">°F</a>
+                  </span>
+                  <br />
+                  <span id="weather-description">Weather</span>
+                </h1>
+
+                <h5 class="card-text">feels like <span id="feels"></span></h5>
+              </div>
+
+              <div class="today-info-container">
+                <div class="row info">
+                  <div class="col">Wind</div>
+                  <div class="col">
+                    Humidity<br />
+                    <span id="humidity">%</span>
+                  </div>
+                  <div class="col row-cols-2">
+                    <div class="col">
+                      Sunrise
+                      <div class="col">Sunset</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>
